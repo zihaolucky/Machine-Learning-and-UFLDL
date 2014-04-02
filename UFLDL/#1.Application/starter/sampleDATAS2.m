@@ -12,7 +12,7 @@ load Data;   % Exceeded Maximum Number of Iterations.
 
 
 patchsize = 3;  % we'll use 3x3 patches 
-numpatches = 10000;
+numpatches = 500;
 
 % Initialize patches with zeros.  Your code will fill in this matrix--one
 % column per patch, 10000 columns. 

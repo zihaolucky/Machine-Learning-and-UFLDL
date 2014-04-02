@@ -14,8 +14,8 @@
 %  allow your sparse autoencoder to get good filters; you do not need to 
 %  change the parameters below.
 
-visibleSize = 8*8;   % number of input units 
-hiddenSize = 25;     % number of hidden units 
+visibleSize = 20*20;   % number of input units 
+hiddenSize = 100;     % number of hidden units 
 sparsityParam = 0.01;   % desired average activation of the hidden units.
                      % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",
 		     %  in the lecture notes). 
@@ -63,7 +63,7 @@ theta = initializeParameters(hiddenSize, visibleSize);
 %  and/or lambda to zero may be helpful for debugging.)  However, in your 
 %  final submission of the visualized weights, please use parameters we 
 %  gave in Step 0 above.
-subpatches = patches(:, 1:10);
+subpatches = patches(:, 1:100);
 [cost, grad] = sparseAutoencoderCost(theta, visibleSize, hiddenSize, lambda, ...
                                      sparsityParam, beta, subpatches);
 

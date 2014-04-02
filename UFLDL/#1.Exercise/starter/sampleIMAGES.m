@@ -4,8 +4,8 @@ function patches = sampleIMAGES()
 
 load IMAGES2;    % load images from disk 
 
-patchsize = 8;  % we'll use 8x8 patches 
-numpatches = 10000;
+patchsize = 20;  % we'll use 8x8 patches 
+numpatches = 1000;
 
 % Initialize patches with zeros.  Your code will fill in this matrix--one
 % column per patch, 10000 columns. 
@@ -25,20 +25,25 @@ patches = zeros(patchsize*patchsize, numpatches);
 %  Image 1
 
 for i=1:numpatches
-%     x_left = randi(512-patchsize+1,1);
-%     y_left = randi(512-patchsize+1,1);
-    x_left = randi(20-patchsize+1,1);
-    y_left = randi(20-patchsize+1,1);
-    
-    x_right = x_left+7;
-    y_right = y_left+7;
-    
-%     ithPatch = IMAGES(x_left:x_right, y_left:y_right, randi(10,1));
-    ithPatch = IMAGES(x_left:x_right, y_left:y_right, randi(5000,1));
+    ithPatch = IMAGES(1:20, 1:20, randi(5000,1));
     ithPatch = reshape(ithPatch,[patchsize*patchsize,1]);
     
     patches(:,i) = ithPatch;
 end
+
+% FOR DATA #1
+% for i=1:numpatches
+%     x_left = randi(512-patchsize+1,1);
+%     y_left = randi(512-patchsize+1,1);
+%     
+%     x_right = x_left+patchsize-1;
+%     y_right = y_left+patchsize-1;
+%     
+%     ithPatch = IMAGES(x_left:x_right, y_left:y_right, randi(10,1));
+%     ithPatch = reshape(ithPatch,[patchsize*patchsize,1]);
+%     
+%     patches(:,i) = ithPatch;
+% end
 
 
 % for i=1:numpatches

@@ -7,8 +7,8 @@ function patches = sampleIMAGES()
 % IMAGES = randn(512,512,10);
 % IMAGES2 = 
 
-% load IMAGES;    % Function Value changing by less than TolX.
-load IMAGES2;   % Exceeded Maximum Number of Iterations.
+load IMAGES;    % Function Value changing by less than TolX.
+% load IMAGES;   % Exceeded Maximum Number of Iterations.
 
 
 patchsize = 8;  % we'll use 8x8 patches 

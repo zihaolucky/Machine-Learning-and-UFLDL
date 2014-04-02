@@ -137,12 +137,22 @@ HIGH2 = patches'*W1';
 LOW2 = patches'*W1';
 
 scatter3(HIGH2(:,1),HIGH2(:,2),HIGH2(:,3),'MarkerEdgeColor','k','MarkerFaceColor',[0 .75 .75])
-% hold on
-% scatter3(LOW2(:,1),LOW2(:,2),LOW2(:,3),'MarkerEdgeColor','k','MarkerFaceColor',[1 .75 .75])
-% title('latter distribution.');
+hold on
+scatter3(LOW2(:,1),LOW2(:,2),LOW2(:,3),'MarkerEdgeColor','k','MarkerFaceColor',[1 .75 .75])
+title('latter distribution.');
+
+figure(3)
+HIGH3 = sigmoid(HIGH2);
+LOW3 = sigmoid(LOW2);
+
+scatter3(HIGH3(:,1),HIGH3(:,2),HIGH3(:,3),'MarkerEdgeColor','k','MarkerFaceColor',[0 .75 .75])
+hold on
+scatter3(LOW3(:,1),LOW3(:,2),LOW3(:,3),'MarkerEdgeColor','k','MarkerFaceColor',[1 .75 .75])
+title('latter distribution.');
 
 
-% display_network(W1', 12); 
+figure(4)
+display_network(W1', 12); 
 
 % print -djpeg weights.jpg   % save the visualization to a file 
 
